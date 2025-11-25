@@ -18,12 +18,12 @@ SE = (H, Σ)
 ```
 
 - **H (Shannon Entropy)** — Lexical diversity (bits/token)
-  - High H = rich vocabulary, complex language
+  - High H = rich vocabulary, unpredictable language
   - Low H = repetitive, simple language
 
 - **Σ (Sigma/KL Divergence)** — Archetypal pattern concentration (bits/token)
   - High Σ = dense clustering of meaningful motifs
-  - Low Σ = scattered, unfocused content
+  - Low Σ = scattered, unfocused content spanning few motifs
 
 **Key insight:** Meaning emerges where linguistic variety (H) intersects with semantic clustering (Σ).
 
@@ -31,8 +31,8 @@ SE = (H, Σ)
 
 ## Why This Matters
 
-- **Falsifiable:** Σ collapses 10-20x on shuffled text (proves we're measuring structure, not just word frequency)
-- **Information-theoretic:** Uses proper Shannon entropy + KL divergence with consistent units
+- **Falsifiable:** Σ collapses on shuffled text (proves we're measuring structure, not just word frequency)
+- **Information-theoretic:** Uses proper Shannon entropy, and Sigma KL divergence with consistent units
 - **Interpretable:** Can trace exactly which motifs drive each peak
 - **Universal:** Works on literature, philosophy, religious texts, clinical language
 
@@ -74,15 +74,16 @@ python SE_Master_Calculator.py your_text_file.txt
 
 ## The Motif Dictionary
 
-The calculator uses **archetypal categories** to detect semantic patterns. Default example analyzes Genesis 1-3 with categories like:
+The calculator uses **archetypal or motif categories** to detect semantic patterns. Default example analyzes Genesis 1-3 with categories like:
 
-- Tree/Axis-Mundi (tree of life, tree of knowledge)
+- Tree/Axis-Mundi (tree of life, tree of knowledge, fruit of life)
 - Waters/Sea (primordial chaos, deep)
 - Light/Fire (cosmic order, day/night)
 - Serpent/Beast (chaos creatures)
 - Divine/Sacred (God, holy, eternal)
-- And more...
+- Etc. 
 
+Motifs are defined by users and tokens and phrases that index them are assigned to motif categories 
 **To analyze your own text:** Edit the `motif_dict` section (line 110) with categories relevant to your domain.
 
 ---
@@ -99,15 +100,7 @@ This proves SE measures semantic architecture, not mere word frequency.
 
 ---
 
-## Example Results
 
-**Literary masterworks** (Tolkien, Dune): High H + High Σ — rich language with dense archetypal structure
-
-**Philosophical texts** (Plato, Hegel): High H + Moderate Σ — complex language with conceptual clustering
-
-**Religious texts** (Genesis, Vedas): Moderate H + High Σ — formulaic language with intense symbolic focus
-
-**Shallow content** (filler, marketing): Low H + Low Σ — repetitive language with no semantic depth
 
 ---
 
